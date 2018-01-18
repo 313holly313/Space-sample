@@ -1,0 +1,729 @@
+.wrapper {
+    position: relative;
+    height: 100%;
+    margin: 0 auto;
+    width: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+	padding: 30px 40px;
+    z-index: 1000;
+	-webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.header--slide {
+    background: rgba(0,0,0,.4);
+	-webkit-box-shadow: 0 0 5px rgba(0,0,0,.3);
+	        box-shadow: 0 0 5px rgba(0,0,0,.3);
+}
+
+.navigation {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+}
+
+.mobile-menu-btn {
+	display: none;
+	position: absolute;
+	top: 25px;
+	left: 30px;
+	width: 27px;
+	height: 27px;
+	z-index: 50;
+}
+	
+.mobile-menu-btn span {
+	position: absolute;
+	right: 0;
+	width: 27px;
+	height: 3px;
+	background: #fff;
+	border-radius: 2px;
+	-webkit-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+}
+
+.mobile-menu-btn__top {
+	top: 0;
+}
+
+.mobile-menu-btn__mid {
+	top: 50%;
+	margin-top: -2px;
+}
+
+.mobile-menu-btn__bot {
+	bottom: 0;
+}
+
+.active .mobile-menu-btn__top {
+	-webkit-transform: rotate(45deg) translateY(9px) translateX(8px);
+	    -ms-transform: rotate(45deg) translateY(9px) translateX(8px);
+	        transform: rotate(45deg) translateY(9px) translateX(8px);
+}
+
+.active .mobile-menu-btn__mid {
+	width: 0;
+}
+
+.active .mobile-menu-btn__bot {
+	-webkit-transform: rotate(-45deg) translateY(-9px) translateX(8px);
+	    -ms-transform: rotate(-45deg) translateY(-9px) translateX(8px);
+	        transform: rotate(-45deg) translateY(-9px) translateX(8px);
+}
+
+.logo {
+	-webkit-box-ordinal-group: 3;
+	    -ms-flex-order: 2;
+	        order: 2;
+	height: 30px;
+}
+
+.logo img {
+	display: inline-block;
+	vertical-align: top;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.menu {
+	-webkit-box-ordinal-group: 2;
+	    -ms-flex-order: 1;
+	        order: 1;
+}
+
+.menu__list {
+	padding: 0;
+	margin: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+}
+
+.menu__item {
+	padding: 5px 20px;
+}
+
+.menu__item a {
+	display: inline-block;
+	vertical-align: top;
+	text-transform: uppercase;
+	font-size: 14px;
+	line-height: 22px;
+	font-weight: 500;
+	-webkit-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+}
+
+.menu__item .active,
+.menu__item a:hover {
+	-webkit-box-shadow: inset 0 -2px 0 #fff;
+	        box-shadow: inset 0 -2px 0 #fff;
+}
+
+@media (max-width: 1280px){
+	.header {
+		height: 75px;
+	}
+	
+	.menu {
+		position: absolute;
+		top: 0;
+		background: rgba(0,0,0,.05);
+		height: 100vh;
+		left: -300px;
+		width: 300px;
+		-webkit-box-shadow: inset 0 0 7px rgba(0,0,0,0.5);
+		        box-shadow: inset 0 0 7px rgba(0,0,0,0.5);
+		-webkit-transition: all 0.3s ease 0s;
+		-o-transition: all 0.3s ease 0s;
+		transition: all 0.3s ease 0s;
+	}
+	
+	.active .menu {
+		left: 0;
+		-webkit-transition: all 0.3s ease 0s;
+		-o-transition: all 0.3s ease 0s;
+		transition: all 0.3s ease 0s;
+	}
+	
+	.logo {
+		position: absolute;
+		top: 22px;
+		right: 22px;
+	}
+	
+	.mobile-menu-btn {
+		display: block;
+	}
+	
+	.scrollbar-inner {
+		margin-top: 75px;
+		height: calc(100vh - 75px);
+		overflow: hidden;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+	}
+	
+	.menu__list {
+		max-height: 100%;
+		overflow-y: auto;
+	}
+	
+	.menu__item {
+		padding: 8px 45px;
+		width: 100%;
+	}
+
+	.menu__item a {
+		line-height: 24px;
+	}
+}
+
+.content {
+	position: relative;
+	min-height: 100%;
+	padding: 100px 40px 40px;
+	margin: 0 auto;
+	overflow: hidden;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+}
+
+.content__bg {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: -1;
+	background: #000;
+}
+
+.content__bg img {
+	display: inline-block;
+	vertical-align: top;
+	min-width: 100vw;
+	min-height: 100%;
+	position: relative;
+	left: 50vw;
+	-webkit-transform: translateX(-50%);
+	    -ms-transform: translateX(-50%);
+	        transform: translateX(-50%);
+	opacity: 0.8;
+}
+
+.content__bg-mob {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	z-index: 10;
+	overflow: hidden;
+	-webkit-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+	background: #000;
+}
+
+.content__bg-mob img {
+	display: inline-block;
+	vertical-align: top;
+	min-width: 100vw;
+	min-height: 100%;
+	position: relative;
+	left: 50vw;
+	-webkit-transform: translateX(-50%);
+	    -ms-transform: translateX(-50%);
+	        transform: translateX(-50%);
+	-webkit-filter: blur(15px);
+	        filter: blur(15px);
+	opacity: 0.8;
+}
+
+.active.header ~ .content .content__bg-mob {
+	width: 300px;
+}
+
+.page-title {
+	margin: 20px auto 0;
+	text-align: center;
+}
+
+.page-title h1 {
+	font-size: 24px;
+	line-height: 24px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	margin: 0;
+	padding: 0;
+}
+
+.page-title__text {
+	font-size: 14px;
+	line-height: 17px;
+	font-weight: 300;
+	text-transform: uppercase;
+}
+
+.planets {
+	padding: 230px 210px;
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;
+}
+
+.planets__line {
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+.planets__line:after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 14px;
+	right: 14px;
+	margin-top: -1px;
+	height: 2px;
+	background: #fff;
+}
+
+.planets__point,
+.planets__point-double {
+	position: relative;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	-webkit-box-shadow: inset 0 0 0 1px #fff;
+	        box-shadow: inset 0 0 0 1px #fff;
+	-webkit-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+	cursor: pointer;
+	z-index: 5;
+}
+
+.planets__point-double {
+	position: absolute;
+	bottom: 4px;
+	top: -14px;
+	left: 0;
+}
+
+.planets__point:nth-child(odd) .planets__point-double {
+	top: -14px;
+	bottom: auto;
+}
+
+.planets__point:after,
+.planets__point-double:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: #fff;
+	border-radius: 50%;
+	-webkit-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+}
+
+.planets__point-double:after {
+	left: 3px;
+	right: 3px;
+	top: 3px;
+	bottom: 3px;
+}
+
+.planets__point:hover:after,
+.planets__point.focus:after,
+.planets__point:hover .planets__point-double:after,
+.planets__point.focus .planets__point-double:after {
+	left: 3px;
+	right: 3px;
+	top: 3px;
+	bottom: 3px;
+}
+
+.planets__point:first-child,
+.planets__point:last-child,
+.planets__point:first-child .planets__point-double,
+.planets__point:last-child .planets__point-double {
+	width: 14px;
+	height: 14px;
+}
+
+.planets__point:first-child,
+.planets__point:last-child {
+	-webkit-box-shadow: inset 0 0 0 1px #fff, 0 0 3px rgba(0,0,0,.1);
+	        box-shadow: inset 0 0 0 1px #fff, 0 0 3px rgba(0,0,0,.1);
+}
+
+.planets__point:first-child:after,
+.planets__point:last-child:after,
+.planets__point:first-child .planets__point-double:after,
+.planets__point:last-child .planets__point-double:after {
+	display: none;
+}
+
+.planets__point:first-child:hover,
+.planets__point:last-child:hover,
+.planets__point.focus:first-child,
+.planets__point.focus:last-child,
+.planets__point:first-child:hover .planets__point-double,
+.planets__point:last-child:hover .planets__point-double,
+.planets__point.focus:first-child .planets__point-double,
+.planets__point.focus:last-child .planets__point-double {
+	-webkit-box-shadow: inset 0 0 0 2px #fff;
+	        box-shadow: inset 0 0 0 2px #fff;
+	-webkit-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+}
+
+.planets__dot-wrap {
+	position: absolute;
+	top: 14px;
+	bottom: 14px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	left: 0;
+	right: 0;
+	-webkit-transition: top 0.4s ease 0s, bottom 0.4s ease 0s;
+	-o-transition: top 0.4s ease 0s, bottom 0.4s ease 0s;
+	transition: top 0.4s ease 0s, bottom 0.4s ease 0s;
+}
+
+.focus .planets__dot-wrap {
+	bottom: -192px;
+	-webkit-transition: bottom 0.4s ease 0.2s;
+	-o-transition: bottom 0.4s ease 0.2s;
+	transition: bottom 0.4s ease 0.2s;
+}
+
+.planets__point:nth-child(odd).focus .planets__dot-wrap {
+	top: -192px;
+	bottom: 14px;
+	-webkit-transition: top 0.4s ease 0.2s;
+	-o-transition: top 0.4s ease 0.2s;
+	transition: top 0.4s ease 0.2s;
+}
+
+.planets__point:not(:nth-child(odd)).focus .planets__point-double {
+	top: 192px;
+	-webkit-transition: top 0.4s ease 0.2s;
+	-o-transition: top 0.4s ease 0.2s;
+	transition: top 0.4s ease 0.2s;
+}
+
+.planets__dot {
+	width: 2px;
+	height: 2px;
+	background: #fff;
+	border-radius: 50%;
+}
+
+.planets__point:first-child .planets__dot:first-child,
+.planets__point:last-child .planets__dot:first-child {
+	background: transparent;
+}
+
+.planets__description {
+	position: absolute;
+	top: 25px;
+	left: 0;
+	width: 150px;
+	text-align: left;
+	-webkit-transition: top 0.4s ease 0s, left 0.2s ease 0.4s;
+	-o-transition: top 0.4s ease 0s, left 0.2s ease 0.4s;
+	transition: top 0.4s ease 0s, left 0.2s ease 0.4s;
+}
+
+.focus .planets__description {
+	position: absolute;
+	top: 92px;
+	left: 20px;
+	width: 150px;
+	text-align: left;
+	-webkit-transition: top 0.4s ease 0.2s, left 0.2s ease 0s;
+	-o-transition: top 0.4s ease 0.2s, left 0.2s ease 0s;
+	transition: top 0.4s ease 0.2s, left 0.2s ease 0s;
+}
+
+.planets__point:nth-child(odd) .planets__description {
+	top: -50px;
+}
+
+.planets__point:nth-child(odd).focus .planets__description {
+	top: -210px;
+}
+
+.planets__title {
+	font-size: 14px;
+	line-height: 16px;
+	font-weight: 500;
+	white-space: nowrap;
+	text-transform: uppercase;
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+	   text-overflow: ellipsis;
+}
+
+.planets__subscr {
+	font-size: 12px;
+	line-height: 16px;
+	font-weight: 300;
+	white-space: nowrap;
+	text-transform: uppercase;
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+	   text-overflow: ellipsis;
+}
+
+.planets__text {
+	width: 200px;
+	height: 0;
+	margin-top: 15px;
+	font-size: 9px;
+	line-height: 11px;
+	font-weight: 300;
+	overflow: hidden;
+	visibility: hidden;
+	-webkit-transition: all 0.3s ease 0;
+	-o-transition: all 0.3s ease 0;
+	transition: all 0.3s ease 0;
+}
+
+.focus .planets__text {
+	height: 77px;
+	visibility: visible;
+	-webkit-transition: all 0.3s ease 0.3s;
+	-o-transition: all 0.3s ease 0.3s;
+	transition: all 0.3s ease 0.3s;
+}
+
+@media (max-width: 1280px){
+	.content {
+		padding: 60px 15px 40px;
+	}
+	
+	.planets {
+		padding: 50px 0 210px;
+	}
+	
+	.planets__line {
+		display: -webkit-inline-box;
+		display: -ms-inline-flexbox;
+		display: inline-flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+		height: 808px;
+		width: 290px;
+		left: 0;
+		right: 0;
+		-webkit-transition: all 0.4s ease 0s;
+		-o-transition: all 0.4s ease 0s;
+		transition: all 0.4s ease 0s
+	}
+	
+	.slide-odd .planets__line {
+		left: -170px;
+		right: 170px;
+	}
+	
+	.slide-even .planets__line {
+		right: -170px;
+		left: 170px;
+	}
+	
+	.planets__line:after {
+		top: 14px;
+		bottom: 14px;
+		left: 50%;
+		right: auto;
+		margin-top: 0;
+		margin-left: -1px;
+		width: 2px;
+		height: auto;
+	}
+	
+	.planets__dot-wrap {
+		top: 0;
+		bottom: 0;
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: row;
+		        flex-direction: row;
+		left: 14px;
+		right: 14px;
+		-webkit-transition: left 0.4s ease 0s, right 0.4s ease 0s;
+		-o-transition: left 0.4s ease 0s, right 0.4s ease 0s;
+		transition: left 0.4s ease 0s, right 0.4s ease 0s;
+	}
+	
+	.focus .planets__dot-wrap {
+		bottom: 0;
+		top: 0;
+		-webkit-transition: left 0.4s ease 0s;
+		-o-transition: left 0.4s ease 0s;
+		transition: left 0.4s ease 0s;
+		left: -105px;
+		right: 14px;
+	}
+	
+	.planets__dot:nth-child(odd) {
+		display: none;
+	}
+	
+	.planets__point.focus:nth-child(odd) .planets__dot-wrap {
+		top: 0;
+		bottom: 0;
+		-webkit-transition: right 0.4s ease 0s;
+		-o-transition: right 0.4s ease 0s;
+		transition: right 0.4s ease 0s;
+		right: -105px;
+		left: 14px;
+	}
+	
+	.planets__point-double {
+		bottom: 0;
+		top: 0;
+		left: -14px;
+	}
+	
+	.planets__point:nth-child(odd) .planets__point-double,
+	.planets__point.focus:not(:nth-child(2n+1)) .planets__point-double {
+		top: 0;
+	}
+
+	.planets__point:nth-child(odd).focus .planets__point-double {
+		left: 105px;
+	}
+	
+	.planets__description {
+		top: 0;
+		left: 24px;
+		text-align: left;
+		width: 100px;
+		-webkit-transition: left 0.4s ease 0s, width 0.3s ease 0s;
+		-o-transition: left 0.4s ease 0s, width 0.3s ease 0s;
+		transition: left 0.4s ease 0s, width 0.3s ease 0s;
+	}
+	
+	.focus .planets__description {
+		width: 150px;
+	}
+	
+	.planets__point:nth-child(odd) .planets__description	{
+		top: 0;
+		-webkit-transition: left 0.4s ease 0s;
+		-o-transition: left 0.4s ease 0s;
+		transition: left 0.4s ease 0s;
+	}
+	
+	.planets__point:nth-child(even) .planets__description {
+		top: 0;
+		left: auto;
+		right: 24px;
+		text-align: right;
+		-webkit-transition: right 0.4s ease 0s;
+		-o-transition: right 0.4s ease 0s;
+		transition: right 0.4s ease 0s;
+	}
+	
+	.planets__point.focus:nth-child(odd) .planets__description {
+		top: 0;
+		left: 140px;
+		-webkit-transition: left 0.4s ease 0s;
+		-o-transition: left 0.4s ease 0s;
+		transition: left 0.4s ease 0s;
+	}
+	
+	
+	.planets__point.focus:nth-child(even) .planets__description {
+		top: 0;
+		right: 140px;
+		-webkit-transition: right 0.4s ease 0s;
+		-o-transition: right 0.4s ease 0s;
+		transition: right 0.4s ease 0s;
+	}	
+	
+	.focus .planets__text {
+		height: 165px
+	}
+	
+	.planets__point:nth-child(odd) .planets__text {
+		width: auto;
+		margin-right: -30px;
+	}
+	
+	.planets__point:nth-child(even) .planets__text {
+		width: auto;
+		margin-left: -30px;
+	}
+
+	.slide-odd .planets__point:not(.focus),
+	.slide-even .planets__point:not(.focus),
+	.slide-odd .planets__line:after,
+	.slide-even .planets__line:after	{
+		opacity: 0.6;
+	}
+}
+
+
+
+
+
+
